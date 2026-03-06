@@ -4,3 +4,36 @@ body {
   margin: 0;
   overflow: hidden;
 }
+
+/*
+ * Undo Tailwind v4 preflight inside Excalidraw.
+ * Tailwind's @layer base resets box-sizing, display, border, etc.
+ * which breaks Excalidraw's internal layout and drawing canvas.
+ * These unlayered rules override the layered preflight.
+ */
+.excalidraw *,
+.excalidraw *::before,
+.excalidraw *::after {
+  box-sizing: revert;
+  border-width: revert;
+  border-style: revert;
+  border-color: revert;
+}
+
+.excalidraw canvas,
+.excalidraw svg,
+.excalidraw img,
+.excalidraw video {
+  display: revert;
+  vertical-align: revert;
+}
+
+.excalidraw button,
+.excalidraw input,
+.excalidraw select,
+.excalidraw textarea {
+  color: revert;
+  font: revert;
+  margin: revert;
+  padding: revert;
+}

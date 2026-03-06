@@ -66,6 +66,7 @@ export default function OverlayCanvas({ viewportRef, onRender }: OverlayCanvasPr
         width: '100%',
         height: '100%',
         pointerEvents: 'none',
+        zIndex: 10,
       }}
     />
   );
